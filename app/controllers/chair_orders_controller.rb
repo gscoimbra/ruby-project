@@ -1,4 +1,5 @@
 class ChairOrdersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def availability
     start_date = params[:start_date]
     end_date = params[:end_date]
