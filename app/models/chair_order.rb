@@ -7,6 +7,7 @@ class ChairOrder < ApplicationRecord
     
     overlapping_orders = ChairOrder.where('start_date < ? AND end_date > ?', end_date, start_date)
     units_alugadas = overlapping_orders.sum(:units)
+    validates :units, numericality: { greater_than: 0 }
     TOTAL_CHAIRS - units_alugadas
   end
 end
