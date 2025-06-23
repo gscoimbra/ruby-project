@@ -58,7 +58,8 @@ rails server
 
 1. Check Availability:
 ```GET /availability?start_date=YYYY-MM-DD&end_date=YYYY-MM-DD&units=N```
-Example:
+
+- Example:
 ```bash
 GET /availability?start_date=2025-01-08&end_date=2025-01-10&units=10
 ```
@@ -72,7 +73,8 @@ Response:
 
 2. Create Rental Order:
 ```POST /chair_orders```
-Example:
+
+- Example:
 ```json
 {
   "start_date": "2025-01-08",
