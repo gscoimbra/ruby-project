@@ -1,5 +1,9 @@
 class ChairOrdersController < ApplicationController
+
+  #Disable CSRF token verification for simplicity
   skip_before_action :verify_authenticity_token
+
+  # GET /availability
   def availability
     start_date = params[:start_date]
     end_date = params[:end_date]
@@ -11,6 +15,7 @@ class ChairOrdersController < ApplicationController
     render json: { can_rent: can_rent, available: available }
   end
 
+  # POST /chair_orders
   def create
     start_date = params[:start_date]
     end_date = params[:end_date]
